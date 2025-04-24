@@ -28,3 +28,4 @@ def test_category_counts():
     # Проверяем счетчики
     assert Category.category_count == 2  # Две категории созданы
     assert Category.product_count == 2  # Два уникальных продукта
+

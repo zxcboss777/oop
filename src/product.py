@@ -37,3 +37,4 @@ class Product:
         Хэширование продукта для использования в множествах.
         """
         return hash((self.name, self.description, self.price, self.quantity))
+

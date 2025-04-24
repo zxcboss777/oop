@@ -33,7 +33,7 @@ class Category:
     def products(self) -> tuple[Product, ...]:
         return tuple(self.__products)
 
-    # ───── строковое представление (из условия ДЗ) ───────────────────────────
+    # ───── строковое представление (из условия ДЗ) ──────────────────────────
     def str(self) -> str:
         total_qty = sum(p.quantity for p in self.__products)
         return f"{self.name}, количество продуктов: {total_qty} шт."

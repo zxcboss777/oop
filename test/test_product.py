@@ -31,3 +31,4 @@ def test_product_repr():
 
     expected_repr = "Product(name=Smartphone, price=500, quantity=10)"
     assert repr(product) == expected_repr
+

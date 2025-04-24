@@ -20,3 +20,4 @@ class Category:
         for product in products:
             Category._unique_products.add(product)
         Category.product_count = len(Category._unique_products)
+
