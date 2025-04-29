@@ -17,7 +17,9 @@ class Product:
         self.quantity = quantity
 
     def __repr__(self):
-        return f"Product(name={self.name}, price={self.price}, quantity={self.quantity})"
+        return (
+            f"Product(name={self.name}, price={self.price}, quantity={self.quantity})"
+        )
 
     def __eq__(self, other):
         """
@@ -25,10 +27,10 @@ class Product:
         """
         if isinstance(other, Product):
             return (
-                self.name == other.name and
-                self.description == other.description and
-                self.price == other.price and
-                self.quantity == other.quantity
+                self.name == other.name
+                and self.description == other.description
+                and self.price == other.price
+                and self.quantity == other.quantity
             )
         return False
 
@@ -37,4 +39,3 @@ class Product:
         Хэширование продукта для использования в множествах.
         """
         return hash((self.name, self.description, self.price, self.quantity))
-
