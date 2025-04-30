@@ -19,7 +19,9 @@ class Product:
     @property
     def __repr__(self):
         return (
-            f"Product(name={self.name}, price={self.price}, quantity={self.quantity})"
+            f"Product(name={self.name}, "
+            f"price={self.price}, "
+            f"quantity={self.quantity})"
         )
 
     def __eq__(self, other):
