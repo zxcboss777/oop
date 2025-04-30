@@ -16,6 +16,7 @@ class Product:
         self.price = price
         self.quantity = quantity
 
+    @property
     def __repr__(self):
         return (
             f"Product(name={self.name}, price={self.price}, quantity={self.quantity})"

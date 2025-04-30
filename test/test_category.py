@@ -36,4 +36,3 @@ class Category:
         """Уменьшаем счетчики при удалении категории"""
         Category.category_count -= 1
         # Можно также уменьшить product_count, если нужно
-

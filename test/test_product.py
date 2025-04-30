@@ -6,10 +6,7 @@ def test_product_creation():
     Тест создания объекта Product.
     """
     product = Product(
-        name="Laptop",
-        description="A powerful laptop",
-        price=1000,
-        quantity=5
+        name="Laptop", description="A powerful laptop", price=1000, quantity=5
     )
 
     assert product.name == "Laptop"
@@ -23,12 +20,8 @@ def test_product_repr():
     Тест метода __repr__ для Product.
     """
     product = Product(
-        name="Smartphone",
-        description="A modern smartphone",
-        price=500,
-        quantity=10
+        name="Smartphone", description="A modern smartphone", price=500, quantity=10
     )
 
     expected_repr = "Product(name=Smartphone, price=500, quantity=10)"
     assert repr(product) == expected_repr
-
