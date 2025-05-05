@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08439df0-4bc8-41f6-b00f-1c60244ff609" name="Changes" comment="OOP hw(3.0)">
-      <change afterPath="$PROJECT_DIR$/src/Models.py" afterDir="false" />
+    <list default="true" id="08439df0-4bc8-41f6-b00f-1c60244ff609" name="Changes" comment="OOP hw(4.0)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_product.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746006767192</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="OOP hw(4.0)">
+      <option name="closed" value="true" />
+      <created>1746011762040</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746011762040</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +151,7 @@
     <MESSAGE value="OOP hw" />
     <MESSAGE value="OOP hw(2.0)" />
     <MESSAGE value="OOP hw(3.0)" />
-    <option name="LAST_COMMIT_MESSAGE" value="OOP hw(3.0)" />
+    <MESSAGE value="OOP hw(4.0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="OOP hw(4.0)" />
   </component>
 </project>
