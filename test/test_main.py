@@ -1,61 +1,86 @@
-# test_main.py
-import pytest
-
-from main import Category, Product
+Category.total_products = 0
 
 
-@pytest.fixture(autouse=True)
-def reset_total_products():
-    Category.total_products = 0
-
-
-def test_price_getter_setter():
-    """Тест геттера и сеттера цены"""
-    product = Product("Телефон", 10000, 5)
-
-    # Проверка геттера
-    assert product.price == 10000
-
-    # Установка корректной цены
-    product.price = 15000
-    assert product.price == 15000
-
-    # Попытка установить отрицательную цену
-    product.price = -5000
-    assert product.price == 15000  # Цена не должна измениться
-
-
-def test_private_price_access():
-    """Тест доступа к приватному атрибуту"""
-    product = Product("Ноутбук", 50000, 3)
-
-    with pytest.raises(AttributeError):
-        # Попытка прямого доступа к приватному атрибуту
-        print(product.__price)
-
-
-def test_add_product_type_checking():
-    """Тест проверки типа добавляемого продукта"""
+# Тесты для класса Category
+def test_add_product():
+    """Тест добавления продукта в категорию."""
     category = Category()
-    product = Product("Планшет", 20000, 4)
-
-    # Корректное добавление
+    product = Product.new_product({"name": "Телефон", "price": 10000, "quantity": 5})
+    product_data = {"name": "Телефон", "price": 10000, "quantity": 5}
+    product = Product.new_product(product_data)
     category.add_product(product)
-    assert Category.total_products == 1
-
-    # Попытка добавить неверный тип
-    with pytest.raises(TypeError):
-        category.add_product("Не продукт")
+    assert category.products == "Телефон, 10000 руб. Остаток: 5 шт.\n"
+    expected = "Телефон, 10000 руб. Остаток: 5 шт.\n"
+    assert category.products == expected
 
 
-def test_products_property():
-    """Тест свойства products"""
+def test_add_duplicate_product():
+    """Тест добавления дубликата продукта."""
     category = Category()
-    product1 = Product("Телефон", 10000, 5)
-    product2 = Product("Ноутбук", 50000, 2)
-
+    product1 = Product.new_product({"name": "Телефон", "price": 10000, "quantity": 5})
+    product2 = Product.new_product({"name": "Телефон", "price": 12000, "quantity": 3})
+    product1 = Product.new_product(
+        {"name": "Телефон", "price": 10000, "quantity": 5}
+    )
+    product2 = Product.new_product(
+        {"name": "Телефон", "price": 12000, "quantity": 3}
+    )
     category.add_product(product1)
     category.add_product(product2)
+    assert category.products == "Телефон, 12000 руб. Остаток: 8 шт.\n"
+    expected = "Телефон, 12000 руб. Остаток: 8 шт.\n"
+    assert category.products == expected
 
-    expected_output = "Телефон, 10000 руб. Остаток: 5 шт.\n" "Ноутбук, 50000 руб. Остаток: 2 шт."
+
+def test_total_products_counter(reset_total_products):
+    """Тест счетчика продуктов."""
+    category = Category()
+    product1 = Product.new_product({"name": "Телефон", "price": 10000, "quantity": 5})
+    product2 = Product.new_product({"name": "Ноутбук", "price": 50000, "quantity": 2})
+    product1 = Product.new_product(
+        {"name": "Телефон", "price": 10000, "quantity": 5}
+    )
+    product2 = Product.new_product(
+        {"name": "Ноутбук", "price": 50000, "quantity": 2}
+    )
+    category.add_product(product1)
+    category.add_product(product2)
+    assert Category.total_products == 2
+
+
+# Тесты для класса Product
+def test_new_product_creation():
+    """Тест создания нового продукта через класс-метод."""
+    data = {"name": "Книга", "price": 500, "quantity": 20}
+
+
+@ @-68
+
+, 16 + 77, 19 @ @
+
+
+def test_price_reduction_confirmation(monkeypatch):
+    assert product.price == 45000  # Цена должна измениться
+
+
+# Тест геттера для списка товаров
+def test_category_products_property():
+    """Тест свойства products в классе Category."""
+    category = Category()
+    product1 = Product.new_product({"name": "Телефон", "price": 10000, "quantity": 5})
+    product2 = Product.new_product({"name": "Ноутбук", "price": 50000, "quantity": 2})
+    product1 = Product.new_product(
+        {"name": "Телефон", "price": 10000, "quantity": 5}
+    )
+    product2 = Product.new_product(
+        {"name": "Ноутбук", "price": 50000, "quantity": 2}
+    )
+    category.add_product(product1)
+    category.add_product(product2)
+    expected_output = (
+        expected = (
+    "Телефон, 10000 руб. Остаток: 5 шт.\n"
+    "Ноутбук, 50000 руб. Остаток: 2 шт.\n"
+    )
     assert category.products == expected_output
+    assert category.products == expected
