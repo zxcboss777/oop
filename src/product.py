@@ -1,15 +1,38 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+
+@dataclass
 class Product:
-    def __init__(self, name, price, quantity):
-        self.name = name
-        self.price = price
-        self.quantity = quantity
+    """Базовый товар."""
 
-    def __str__(self):
-        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+    name: str
+    price: float
+    quantity: int = 0
 
-    def __add__(self, other):
-        if not isinstance(other, Product):
-            raise TypeError("Можно складывать только объекты Product")
-        if self.name != other.name:
-            raise ValueError("Можно складывать только одинаковые товары")
-        return self.price * self.quantity + other.price * other.quantity
+    # --- арифметика ---------------------------------------------------------
+    def __add__(self, other: "Product") -> int:
+        """
+        Складывает только товары одного и того же класса.
+        Возвращает суммарное количество экземпляров (int).
+
+        >>> phone = Smartphone(..., quantity=2)
+        >>> phone + phone          # 4
+        >>> phone + LawnGrass(...) # TypeError
+        """
+        if type(self) is not type(other):
+            msg = f"Нельзя сложить {type(self).__name__} " f"и {type(other).__name__}"
+            raise TypeError(msg)
+        return self.quantity + other.quantity
+
+    # --- строковые представления --------------------------------------------
+    def __str__(self) -> str:
+        """Человекочитаемое представление для пользователя."""
+        price = int(self.price) if self.price.is_integer() else self.price
+        return f"{self.name}, {price} руб. Остаток: {self.quantity} шт."
+
+    def __repr__(self) -> str:
+        """Официальное представление для разработчика."""
+        cls_name = self.__class__.__name__
+        return f"{cls_name}(name={self.name!r}, " f"price={self.price}, quantity={self.quantity})"

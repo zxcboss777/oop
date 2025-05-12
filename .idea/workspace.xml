@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08439df0-4bc8-41f6-b00f-1c60244ff609" name="Changes" comment="15.1">
+      <change afterPath="$PROJECT_DIR$/src/lawn_grass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/smartphone.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/catalog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_catalog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_product.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +148,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746440676884</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="14.2 доработка">
+      <option name="closed" value="true" />
+      <created>1747035054272</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747035054272</updated>
+    </task>
+    <task id="LOCAL-00012" summary="14.2 доработка(test_main.py)">
+      <option name="closed" value="true" />
+      <created>1747035114013</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747035114013</updated>
+    </task>
+    <task id="LOCAL-00013" summary="15.1">
+      <option name="closed" value="true" />
+      <created>1747035411303</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747035411303</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +206,8 @@
     <MESSAGE value="OOP hw(4.0)" />
     <MESSAGE value="Режимы доступа" />
     <MESSAGE value="Режимы доступа 2.0" />
+    <MESSAGE value="14.2 доработка" />
+    <MESSAGE value="14.2 доработка(test_main.py)" />
     <MESSAGE value="15.1" />
     <option name="LAST_COMMIT_MESSAGE" value="15.1" />
   </component>

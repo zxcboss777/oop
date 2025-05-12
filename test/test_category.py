@@ -1,6 +1,6 @@
-from main import Product, Category
-from src.product import Product
+from main import Category, Product
 from src.category import Category
+from src.product import Product
 
 
 def test_category_counts():
