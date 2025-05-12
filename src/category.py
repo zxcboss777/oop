@@ -8,35 +8,22 @@ from .product import Product
 class Category:
     """Коллекция однотипных товаров (смартфоны, газонная трава и т. д.)."""
 
-    def __init__(self, name: str, products: Iterable[Product] | None = None):
-        self.name = name
+    def __init__(self, title: str, products: Iterable[Product] | None = None):
+        self.title = title
         self._products: List[Product] = list(products) if products else []
 
-    # --- добавление товаров -------------------------------------------------
+    # &mdash; добавление -----------------------------------------------------------
     def add_product(self, product: Product) -> None:
         """
-        Добавляет товар или его наследника. Любой другой объект → TypeError.
+        Добавляет товар или его наследника. Любой другой объект &rarr; TypeError.
         """
-        if not isinstance(product, Product):  # защищаем "контейнер"
+        if not isinstance(product, Product):  # защищаем &laquo;контейнер&raquo;
             raise TypeError("Можно добавить только экземпляр Product или наследника")
         self._products.append(product)
 
-    # --- свойства -----------------------------------------------------------
-    @property
-    def products(self) -> str:
-        """Строковое представление всех товаров категории."""
-        return "\n".join(str(product) for product in self._products)
-
-    # --- итерация ----------------------------------------------------------
+    # &mdash; прочее ---------------------------------------------------------------
     def __iter__(self):
         yield from self._products
 
-    # --- строковые представления -------------------------------------------
-    def __str__(self) -> str:
-        """Человекочитаемое представление для пользователя."""
-        total_quantity = sum(product.quantity for product in self._products)
-        return f"{self.name}, количество продуктов: {total_quantity} шт."
-
-    def __repr__(self) -> str:
-        """Официальное представление для разработчика."""
-        return f"Category({self.name!r}, items={len(self._products)})"
+    def __repr__(self):  # pragma: no cover
+        return f"Category({self.title!r}, items={len(self._products)})"

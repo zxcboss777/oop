@@ -1,3 +1,4 @@
+# src/smartphone.py
 from dataclasses import dataclass
 
 from .product import Product
