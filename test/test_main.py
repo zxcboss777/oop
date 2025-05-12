@@ -1,4 +1,5 @@
 import pytest
+
 from main import Category, Product
 
 
@@ -61,12 +62,12 @@ def test_price_reduction_confirmation(monkeypatch):
     """Тест понижения цены с подтверждением."""
     product = Product("Ноутбук", 50000, 10)
     # Моделируем ввод пользователя ("n" для отмены)
-    monkeypatch.setattr('builtins.input', lambda _: "n")
+    monkeypatch.setattr("builtins.input", lambda _: "n")
     product.price = 45000
     assert product.price == 50000  # Цена не должна измениться
 
     # Моделируем ввод пользователя ("y" для подтверждения)
-    monkeypatch.setattr('builtins.input', lambda _: "y")
+    monkeypatch.setattr("builtins.input", lambda _: "y")
     product.price = 45000
     assert product.price == 45000  # Цена должна измениться
 
@@ -80,9 +81,5 @@ def test_category_products_property():
     product2 = Product.new_product(product2_data)
     category.add_product(product1)
     category.add_product(product2)
-    expected_output = (
-        "Телефон, 10000 руб. Остаток: 5 шт.\n"
-        "Ноутбук, 50000 руб. Остаток: 2 шт.\n"
-    )
+    expected_output = "Телефон, 10000 руб. Остаток: 5 шт.\n" "Ноутбук, 50000 руб. Остаток: 2 шт.\n"
     assert category.products == expected_output
-
