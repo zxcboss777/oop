@@ -16,13 +16,8 @@ class Product:
         self.price = price
         self.quantity = quantity
 
-    @property
     def __repr__(self):
-        return (
-            f"Product(name={self.name}, "
-            f"price={self.price}, "
-            f"quantity={self.quantity})"
-        )
+        return f"Product(name={self.name}, price={self.price}, quantity={self.quantity})"
 
     def __eq__(self, other):
         """
@@ -30,10 +25,10 @@ class Product:
         """
         if isinstance(other, Product):
             return (
-                self.name == other.name
-                and self.description == other.description
-                and self.price == other.price
-                and self.quantity == other.quantity
+                self.name == other.name and
+                self.description == other.description and
+                self.price == other.price and
+                self.quantity == other.quantity
             )
         return False
 
