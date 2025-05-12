@@ -85,3 +85,4 @@ def test_category_products_property():
         "Ноутбук, 50000 руб. Остаток: 2 шт.\n"
     )
     assert category.products == expected_output
+
