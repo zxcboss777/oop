@@ -1,39 +1,15 @@
 class Product:
-    """
-    Класс, представляющий продукт.
-    """
-
-    def __init__(self, name, description, price, quantity):
-        """
-        Инициализация продукта.
-        :param name: Название продукта
-        :param description: Описание продукта
-        :param price: Цена продукта
-        :param quantity: Количество продукта
-        """
+    def __init__(self, name, price, quantity):
         self.name = name
-        self.description = description
         self.price = price
         self.quantity = quantity
 
-    def __repr__(self):
-        return f"Product(name={self.name}, price={self.price}, quantity={self.quantity})"
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
-    def __eq__(self, other):
-        """
-        Сравнение двух продуктов по их атрибутам.
-        """
-        if isinstance(other, Product):
-            return (
-                self.name == other.name and
-                self.description == other.description and
-                self.price == other.price and
-                self.quantity == other.quantity
-            )
-        return False
-
-    def __hash__(self):
-        """
-        Хэширование продукта для использования в множествах.
-        """
-        return hash((self.name, self.description, self.price, self.quantity))
+    def __add__(self, other):
+        if not isinstance(other, Product):
+            raise TypeError("Можно складывать только объекты Product")
+        if self.name != other.name:
+            raise ValueError("Можно складывать только одинаковые товары")
+        return self.price * self.quantity + other.price * other.quantity

@@ -1,33 +1,28 @@
+import pytest
+
+from src.category import Category
 from src.product import Product
 
 
-def test_product_creation():
-    """
-    Тест создания объекта Product.
-    """
-    product = Product(
-        name="Laptop",
-        description="A powerful laptop",
-        price=1000,
-        quantity=5
-    )
+class TestProduct:
+    def test_product_str(self):
+        product = Product("Телефон", 50000, 10)
+        assert str(product) == "Телефон, 50000 руб. Остаток: 10 шт."
 
-    assert product.name == "Laptop"
-    assert product.description == "A powerful laptop"
-    assert product.price == 1000
-    assert product.quantity == 5
+    def test_product_add(self):
+        p1 = Product("Телефон", 50000, 2)
+        p2 = Product("Телефон", 50000, 3)
+        assert p1 + p2 == 250000  # 50000*2 + 50000*3
+
+    def test_product_add_different_names(self):
+        p1 = Product("Телефон", 50000, 2)
+        p2 = Product("Ноутбук", 100000, 1)
+        with pytest.raises(ValueError):
+            p1 + p2
 
 
-def test_product_repr():
-    """
-    Тест метода __repr__ для Product.
-    """
-    product = Product(
-        name="Smartphone",
-        description="A modern smartphone",
-        price=500,
-        quantity=10
-    )
-
-    expected_repr = "Product(name=Smartphone, price=500, quantity=10)"
-    assert repr(product) == expected_repr
+class TestCategory:
+    def test_category_str(self):
+        products = [Product("Телефон", 50000, 2), Product("Ноутбук", 100000, 1)]
+        category = Category("Электроника", products)
+        assert str(category) == "Электроника, количество продуктов: 3 шт."
