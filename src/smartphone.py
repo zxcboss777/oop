@@ -1,4 +1,3 @@
-# src/smartphone.py
 from dataclasses import dataclass
 
 from .product import Product
@@ -6,7 +5,7 @@ from .product import Product
 
 @dataclass
 class Smartphone(Product):
-    efficiency: float  # производительность (баллы, бенчмарк и т.д.)
+    efficiency: float
     model: str
-    memory: int  # встроенная память, ГБ
+    memory: int
     color: str

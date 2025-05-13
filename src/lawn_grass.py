@@ -5,6 +5,6 @@ from .product import Product
 
 @dataclass
 class LawnGrass(Product):
-    country: str  # страна-производитель
-    germination_period: int  # срок прорастания, дней
-    color: str  # оттенок травы
+    country: str
+    germination_period: int
+    color: str
