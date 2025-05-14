@@ -1,5 +1,4 @@
 import pytest
-
 from shop.category import Category
 from shop.lawn_grass import LawnGrass
 from shop.smartphone import Smartphone
