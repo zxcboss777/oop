@@ -1,44 +1,23 @@
-class Product:
-    """описание продукта"""
 from abc import ABC, abstractmethod
-
-    name: str
-    description: str
-    price: float
-    quantity: int
 
 class ReprLoggingMixin:
     """
     Миксин для логирования создания объектов и представления
     Реализует магический метод __repr__ и расширяет __init__
     """
-
     def __init__(self, *args, **kwargs):
         """
         Расширяет конструктор базового класса логированием параметров создания
         """
-        print(f"Создание объекта {self.__class__.__name__} с параметрами: {args}, {kwargs}")
-
+        super().__init__(*args, **kwargs)
+        print(self.__repr__())
 
     def __repr__(self) -> str:
-        args_str = ', '.join(f"{k}={v!r}" for k, v in self.__dict__.items())
-        return f"<{self.__class__.__name__}({args_str})>"
+        return f"{self.__class__.__name__}({self.__dict__})"
 
 
 class BaseProduct(ABC):
     """Абстрактный базовый класс для продуктов"""
-
-    @abstractmethod
-    def __init__(self, name: str, description: str, price: float, quantity: int):
-        self.name = name
-        self.description = description
-        self.price = price
-        self.quantity = quantity
-        self._price = price
-        self.quantity = quantity
-        super().__init__(name, description, price, quantity)  # Добавлен вызов
-        super().__init__()
-
     @abstractmethod
     def __str__(self):
         pass
@@ -60,17 +39,16 @@ class BaseProduct(ABC):
 
 class Product(BaseProduct, ReprLoggingMixin):
     """Класс продукта с наследованием от BaseProduct и миксина"""
-
     def __init__(self, name: str, description: str, price: float, quantity: int):
+        self.name = name
+        self.description = description
+        self.price = price
+        self.quantity = quantity
+        self._price = price
         if quantity == 0:
             raise ValueError("Товар с нулевым количеством не может быть добавлен")
-
-        super().__init__(
-            name=name,
-            description=description,
-            price=price,
-            quantity=quantity
-        )
+        self.quantity = quantity
+        super().__init__()
 
     def __str__(self) -> str:
         return f"{self.name}, {self._price} руб. Остаток: {self.quantity} шт."
@@ -123,3 +101,15 @@ class LawnGrass(Product):
         self.country = country
         self.germination_period = germination_period
         self.color = color
+
+
+if __name__ == "__main__":
+    # Пример использования
+    product = Product("Товар", "Описание товара", 100.0, 10)
+    print(product)
+
+    smartphone = Smartphone("Смартфон", "Описание смартфона", 50000.0, 5, 2.5, "Модель", 128, "Черный")
+    print(smartphone)
+
+    lawn_grass = LawnGrass("Газонная трава", "Описание травы", 1500.0, 20, "Россия", "14 дней", "Зеленый")
+    print(lawn_grass)

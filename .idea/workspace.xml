@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08439df0-4bc8-41f6-b00f-1c60244ff609" name="Changes" comment="16.2">
+    <list default="true" id="08439df0-4bc8-41f6-b00f-1c60244ff609" name="Changes" comment="16.2 дороботка">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_product.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747136236788</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="16.2 дороботка">
+      <option name="closed" value="true" />
+      <created>1747208522140</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1747208522140</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,6 +245,7 @@
     <MESSAGE value="15.1" />
     <MESSAGE value="16.1" />
     <MESSAGE value="16.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="16.2" />
+    <MESSAGE value="16.2 дороботка" />
+    <option name="LAST_COMMIT_MESSAGE" value="16.2 дороботка" />
   </component>
 </project>
